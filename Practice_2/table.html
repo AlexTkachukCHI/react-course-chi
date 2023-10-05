@@ -31,6 +31,30 @@
                         </tr>
                     </tbody>
                 </table>
+                <hr>
+                <form action="#" style="margin-left: 10px;">
+                    <div class="form-group">
+                        <label for="bookname">Book name:</label>
+                        <input type="text" id="bookname" name="bookname">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="textarea" id="description" name="description">
+                    </div>
+                    <div class="form-group">
+                        <label for="rating">Rating:</label>
+                        <input type="range" min="1" max="100" value="50" id="rating" name="rating">
+                    </div>
+                    <div class="form-group">
+                        <label for="price">Price:</label>
+                        <input type="number" id="price" name="price">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">Select a image:</label>
+                    <input type="file" id="image" name="image">
+                    </div>
+                    <input type="submit" value="Add Book">
+                  </form>
             </section>
         </main>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
