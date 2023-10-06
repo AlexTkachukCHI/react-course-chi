@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homework book library</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel=”stylesheet” href=”https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css” />
+    <style>
+        tr {
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Бібліотека</a>
+            <div class="collapse navbar-collapse">
+            <ul class="navbar-nav vertical-divider">
+                <li class="nav-item">
+                <a class="nav-link active" aria-current="page" href="#">Головна</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="#">Про нас</a>
+                </li>
+                <li class="nav-item">
+                <a class="nav-link active" href="#">Контакти</a>
+                </li>
+            </ul>
+            </div>
+        </div>
+    </nav>
+    
+    <main>
+        <section class="table-responsive" style="margin-top: 20px;">
+            <table border="1" cellspacing="20" class="table table-hover table-bordered border-dark align-middle">
+                <thead class="thead-dark">
+                    <tr>
+                        <th scope="col">Назва</th>
+                        <th scope="col">Автор</th>
+                        <th scope="col">Рейтинг</th>
+                        <th scope="col">Аудио фрагмент</th>
+                        <th scope="col">Огляд книги</th>
+                    </tr>
+                </thead>
+                
+                <tbody>
+                    <tr>
+                        <td>Кобзар</td>
+                        <td>Тарас Шевченко</td>
+                        <td>100%</td>
+                        <td><audio controls><source src=""></audio></td>
+                        <td><video controls><source src=""></video></td>
+                    </tr>
+                    <tr>
+                        <td>Книга Мавка. Лісова Пісня</td>
+                        <td>Леся Українка</td>
+                        <td>80%</td>
+                        <td><audio controls><source src=""></audio></td>
+                        <td><video controls><source src=""></video></td>
+                    </tr>
+                    <tr>
+                        <td>Філософські трактати</td>
+                        <td>Грігорій сковорода</td>
+                        <td>90%</td>
+                        <td><audio controls><source src=""></audio></td>
+                        <td><video controls><source src=""></video></td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+        <hr>
+        <section>
+            <form action="#" style="margin-left: 10px;">
+                <div class="form-group">
+                    <label for="bookname">Назва Книги:</label>
+                    <input type="text" id="bookname" name="bookname">
+                </div>
+                <div class="form-group">
+                    <label for="author">Автор:</label>
+                    <input type="text" id="author" name="author">
+                </div>
+                <div class="form-group">
+                    <label for="description">Опис:</label>
+                    <input type="textarea" id="description" name="description">
+                </div>
+                <div class="form-group">
+                    <label for="rating">Рейтинг:</label>
+                    <input type="range" min="1" max="100" value="50" id="rating" name="rating">
+                </div>
+                <div class="form-group">
+                    <label for="image">Виберіть фото обкладинки:</label>
+                <input type="file" id="image" name="image">
+                </div>
+                <input class="btn btn-success" type="submit" value="Add Book">
+              </form>
+        </section>
+        <hr>
+        <section>
+            <article>
+                <h3>Додаткова інформація</h3>
+                <p>Я створив цю сторінку використовуючи <abbr title="Hyper Text Markup Language">HTML</abbr>.</p>
+                <div class="card">
+                    <div class="card-body">
+                        <figure>
+                            <blockquote class="blockquote justify-content-left">
+                                <p>Литература — это самый приятный способ игнорировать жизнь.</p>
+                            </blockquote>
+                            <figcaption class="blockquote-footer">
+                                Фернандо Пессоа
+                            </figcaption>
+                        </figure>
+                    </div>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-center text-lg-start bg-light">
+        <!-- Copyright -->
+        <div class="text-center p-4" style="background-color: rgba(0, 0, 0, 0.05);">
+            © 2023 Copyright:
+            <a class="text-reset fw-bold" href="https://chiacademy.software/">CHI Academy</a>
+        </div>
+        <!-- Copyright -->
+    </footer>
+    <!-- Footer -->
+
+    <!-- add bootstrap js scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+</body>
+</html>
