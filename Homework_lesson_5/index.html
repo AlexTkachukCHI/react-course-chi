@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Calculator</title>
+</head>
+<body>
+    <h1>Simple Calculator</h1>
+    
+    <label for="num1">Number 1:</label>
+    <input type="number" id="num1" required><br><br>
+
+    <label for="operation">Operation:</label>
+    <select id="operation" required>
+        <option value="+">Addition (+)</option>
+        <option value="-">Subtraction (-)</option>
+        <option value="*">Multiplication (*)</option>
+        <option value="/">Division (/)</option>
+    </select><br><br>
+
+    <label for="num2">Number 2:</label>
+    <input type="number" id="num2" required><br><br>
+
+    <button onclick="calculate()">Calculate</button>
+
+    <script>
+        var num1, num2; // Global variables to store input values
+
+        document.getElementById("num1").addEventListener("blur", function() {
+            num1 = parseFloat(this.value);
+        });
+
+        document.getElementById("num2").addEventListener("blur", function() {
+            num2 = parseFloat(this.value);
+        });
+
+        function calculate() {
+            var operation = document.getElementById("operation").value;
+            var result;
+
+            switch (operation) {
+                case '+':
+                    result = num1 + num2;
+                    break;
+                case '-':
+                    result = num1 - num2;
+                    break;
+                case '*':
+                    result = num1 * num2;
+                    break;
+                case '/':
+                    result = num1 / num2;
+                    break;
+            }
+
+            alert("Result: " + result);
+        }
+    </script>
+</body>
+</html>
