@@ -4,7 +4,7 @@ enum Days {
     Tuesday = 'Вівторок',
     Wednesday = 'Середа',
     Thursday = 'Четвер',
-    Friday = 'П'ятниця',
+    Friday = 'П\'ятниця',
     Saturday = 'Субота',
     Sunday = 'Неділя',
   }
@@ -70,7 +70,7 @@ enum Days {
     salary: number;
   }
   
-  class Worker implements IWorker {
+  class MyWorker implements IWorker {
     constructor(public name: string, public age: number, public position: string, public salary: number) {}
   
     getSalary(): number {
@@ -82,7 +82,7 @@ enum Days {
     }
   }
   
-  const john: Worker = new Worker('John Doe', 30, 'Developer', 50000);
+  const john: MyWorker = new MyWorker('Mike Salivan', 30, 'Developer', 50000);
   console.log(john.getSalary()); // Output: 50000
   john.setSalary(60000);
   console.log(john.getSalary()); // Output: 60000
