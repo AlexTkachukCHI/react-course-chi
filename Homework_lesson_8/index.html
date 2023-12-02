@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Додавання об'єкта на сервер</title>
+</head>
+<body>
+
+<form id="objectForm">
+    <label for="name">Назва:</label>
+    <input type="text" id="name" name="name" required><br>
+
+    <label for="year">Рік:</label>
+    <input type="number" id="year" name="year" required><br>
+
+    <label for="price">Ціна:</label>
+    <input type="number" id="price" name="price" step="0.01" required><br>
+
+    <button type="button" onclick="submitForm()">Відправити форму</button>
+</form>
+
+<div id="response"></div>
+
+<script>
+    function submitForm() {
+        var name = document.getElementById("name").value;
+        var year = document.getElementById("year").value;
+        var price = document.getElementById("price").value;
+
+        var data = {
+            name: name,
+            year: parseInt(year),
+            price: parseFloat(price)
+        };
+
+        // Відправляємо POST-запит на сервер
+        fetch('https://api.restful-api.dev/objects', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json',
+            },
+            body: JSON.stringify(data),
+        })
+        .then(response => response.json())
+        .then(data => {
+            // Отримуємо дату створення та виводимо на сторінку
+            var createdAt = data.createdAt;
+            document.getElementById("response").innerText = 'Об\'єкт додано на сервер. Дата створення: ' + createdAt;
+        })
+        .catch((error) => {
+            console.error('Помилка:', error);
+        });
+    }
+</script>
+
+</body>
+</html>
