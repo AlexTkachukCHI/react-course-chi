@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Розклад уроків</title>
+    <style>
+        table {
+            border-collapse: collapse;
+            width: 80%;
+            margin: 20px auto;
+        }
+
+        table, th, td {
+            border: 1px solid black;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: center;
+        }
+
+        button {
+            margin: 10px;
+        }
+    </style>
+</head>
+<body>
+
+<table id="schedule">
+    <thead>
+        <tr>
+            <th>День</th>
+            <th>Час</th>
+            <th>Урок</th>
+            <th>Дії</th>
+        </tr>
+    </thead>
+    <tbody>
+        <tr>
+            <td contenteditable="true">Понеділок</td>
+            <td contenteditable="true">1</td>
+            <td contenteditable="true">Математика</td>
+            <td><button onclick="editLesson(this)">Редагувати</button><button onclick="deleteLesson(this)">Видалити</button></td>
+        </tr>
+        <!-- Додайте інші рядки за аналогією -->
+    </tbody>
+</table>
+
+<button onclick="addLesson()">Додати урок</button>
+
+<script>
+    function editLesson(button) {
+        var row = button.parentNode.parentNode;
+        var cells = row.getElementsByTagName("td");
+
+        var day = cells[0].textContent;
+        var time = cells[1].textContent;
+        var lesson = cells[2].textContent;
+
+        var newDay = prompt("Введіть новий день:", day);
+        var newTime = prompt("Введіть новий час:", time);
+        var newLesson = prompt("Введіть нову назву уроку:", lesson);
+
+        if (newDay && newTime && newLesson) {
+            cells[0].textContent = newDay;
+            cells[1].textContent = newTime;
+            cells[2].textContent = newLesson;
+        }
+    }
+
+    function deleteLesson(button) {
+        var row = button.parentNode.parentNode;
+        row.parentNode.removeChild(row);
+    }
+
+    function addLesson() {
+        var table = document.getElementById("schedule").getElementsByTagName('tbody')[0];
+        var newRow = table.insertRow(table.rows.length);
+
+        var days = ["Понеділок", "Вівторок", "Середа", "Четвер", "П'ятниця"];
+        for (var i = 0; i < 3; i++) {
+            var cell = newRow.insertCell(i);
+            if (i === 0) {
+                var dayInput = prompt("Введіть день тижня (Понеділок, Вівторок, Середа, Четвер, П'ятниця):");
+                if (days.includes(dayInput)) {
+                    cell.textContent = dayInput;
+                } else {
+                    alert("Неправильно введений день тижня. Введіть ще раз.");
+                    i--;
+                }
+            } else {
+                cell.textContent = prompt("Введіть дані:");
+            }
+        }
+
+        var actionsCell = newRow.insertCell(3);
+        actionsCell.innerHTML = '<button onclick="editLesson(this)">Редагувати</button><button onclick="deleteLesson(this)">Видалити</button>';
+    }
+</script>
+
+</body>
+</html>
