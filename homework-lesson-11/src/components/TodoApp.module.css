@@ -1,0 +1,15 @@
+.todoInput {
+    margin: 5px;
+}
+
+.todoList {
+    list-style: none;
+}
+
+.filters {
+    margin: 10px;
+}
+
+.filters button {
+    margin: 5px;
+}
